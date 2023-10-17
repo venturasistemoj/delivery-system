@@ -10,7 +10,7 @@ As the project's main objective is to show the use of Java data structures, the 
 The system's documentation and business rules are commented in the code.
 
 ## Testing
-The project includes unit tests with JUnit and Mockito at the [tests](delivery-control-system/src/test/java/tests) package.
+The project includes unit tests with JUnit and Mockito at the [tests](src/test/java/test) package.
 
 ## Contributing
 I welcome contributions! If you want to contribute, please follow [Contribution Guidelines](CONTRIBUTING.md).
