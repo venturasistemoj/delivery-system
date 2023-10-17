@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 import static org.mockito.Mockito.when;
 
@@ -83,7 +83,9 @@ public class DeliveryControlTest {
 		t3.getTruckPoints().add(l9);
 		t3.getTruckPoints().add(l10);
 
-		// LinkedHashSet guarantees the trucks's delivery order
+		/**
+		 * LinkedHashSet guarantees the trucks's delivery order.
+		 */
 		Set<Truck> truckFleet = new LinkedHashSet<>();
 		truckFleet.add(t1);
 		truckFleet.add(t2);
@@ -109,7 +111,7 @@ public class DeliveryControlTest {
 
 		when(deliverySystem.getDeliveryPoints()).thenReturn(deliveryPoints);
 
-		// test
+		// tests
 		controlSystem.performDeliveries();
 	}
 

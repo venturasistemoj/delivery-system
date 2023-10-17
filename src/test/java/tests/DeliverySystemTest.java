@@ -1,4 +1,4 @@
-package test;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -42,9 +42,9 @@ public class DeliverySystemTest {
 	public void testCreateDeliveryItem() {
 
 		// mock behavior config
-		when(scan.nextLine()).thenReturn("Item test");
+		when(scan.nextLine()).thenReturn("Item tests");
 
-		// test
+		// tests
 		boolean result = deliverySystem.insertDeliveryItem();
 
 		//verification
@@ -55,7 +55,7 @@ public class DeliverySystemTest {
 	@Test
 	public void testCreateLocation() {
 
-		when(scan.nextLine()).thenReturn("Street test");
+		when(scan.nextLine()).thenReturn("Street tests");
 
 		ResultEnum result = deliverySystem.insertDeliveryPoint();
 
@@ -66,7 +66,7 @@ public class DeliverySystemTest {
 	@Test
 	public void testCreateTruck() {
 
-		when(scan.nextLine()).thenReturn("Plate test");
+		when(scan.nextLine()).thenReturn("Plate tests");
 
 		boolean result = deliverySystem.insertTruck();
 
@@ -80,16 +80,16 @@ public class DeliverySystemTest {
 		/* Creating a spy of the actual DeliverySystem instance. A spy is a partially fake object that allows us to
 		 * keep the original behavior of methods, but also override some behavior. Here we are using spy(deliverySystem)
 		 * which will allow us to configure the behavior of the getDeliveryItems() and getDeliveryPoints() methods
-		 * specifically for this test.
+		 * specifically for this tests.
 		 */
 		DeliverySystem deliverySystemSpy = spy(deliverySystem);
 
 		// Mocking behavior
-		when(scan.nextLine()).thenReturn("Item test").thenReturn("Street test");
+		when(scan.nextLine()).thenReturn("Item tests").thenReturn("Street tests");
 
 		// Configuring objects involved
-		DeliveryItem item = new DeliveryItem("Item test");
-		Location location = new Location("Street test");
+		DeliveryItem item = new DeliveryItem("Item tests");
+		Location location = new Location("Street tests");
 
 		when(deliverySystemSpy.getDeliveryItems()).thenReturn(new ArrayList<>(Collections.singletonList(item)));
 		when(deliverySystemSpy.getDeliveryPoints()).thenReturn(new LinkedList<>(Collections.singletonList(location)));
@@ -107,9 +107,9 @@ public class DeliverySystemTest {
 	public void testAssociateLocationToTruck() {
 
 		DeliverySystem deliverySystemSpy = spy(deliverySystem);
-		when(scan.nextLine()).thenReturn("Street test").thenReturn("Truck Plate");
-		Location location = new Location("Street test");
-		location.getLocationItems().add(new DeliveryItem("Item test"));
+		when(scan.nextLine()).thenReturn("Street tests").thenReturn("Truck Plate");
+		Location location = new Location("Street tests");
+		location.getLocationItems().add(new DeliveryItem("Item tests"));
 		Truck truck = new Truck("Truck Plate");
 
 		when(deliverySystemSpy.getDeliveryPoints()).thenReturn((new LinkedList<>(Collections.singletonList(location))));
