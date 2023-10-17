@@ -1,10 +1,10 @@
 # Pure Java Data Structures
 
 ## Overview
-This demo project highlights the use of Java data structures. The code models a fictitious non-productive delivery system solely for the purpose of exemplifying the use of the List, Set and Queue interfaces, as well as their various implementations.
+This demo project highlights the use of Java data structures. The code models a fictitious non-productive delivery system solely for the purpose of exemplifying the use of the `List`, `Set` and `Queue` interfaces, as well as their various implementations.
 
 ## Getting Started
-As the project's main objective is to show the use of Java data structures, the system interface operates on the command line; which can be started in the Main class.
+As the project's main objective is to show the use of Java data structures, the system interface operates on the command line; which can be started in the `Main` class.
 
 ## Documentation
 The system's documentation and business rules are commented in the code.
